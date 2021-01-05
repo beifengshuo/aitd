@@ -1,5 +1,6 @@
 import Mock from 'mockjs'
-import tableAPI from './money'
+import tableAPI from './money';
+import menuAPI from './menu'
 // import salesAPI from './sales'
 // import userAPI from './user'
 // 设置全局延时 没有延时的话有时候会检测不到数据变化 建议保留
@@ -12,6 +13,11 @@ Mock.mock(/\/money\/remove/, 'get', tableAPI.deleteMoney)
 Mock.mock(/\/money\/batchremove/, 'get', tableAPI.batchremoveMoney)
 Mock.mock(/\/money\/add/, 'get', tableAPI.createMoney)
 Mock.mock(/\/money\/edit/, 'get', tableAPI.updateMoney)
+
+//菜单相关
+Mock.mock(/\/menu\/get/, 'get', menuAPI.geMenuList)
+
+
 // // sales相关
 // Mock.mock(/\/sales\/get/, 'get', salesAPI.getSalesList)
 // // user相关
